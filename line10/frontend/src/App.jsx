@@ -5,6 +5,8 @@ import Sidebar from './components/sidebar';
 import './index.css';
 import Analytics from './views/analytics/analytics';
 import Supervisor from './views/supervisor/supervisor';
+import Feeding from './views/feeding/feeding';
+import Operator from './views/operator/operator';
 
 function App() {
 
@@ -16,8 +18,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Analytics />} />
           <Route path='/supervisor' element={<Supervisor />} />
-          <Route path='/operator' element={<h1></h1>} />
-          <Route path='/feeding' element={<h1></h1>} />
+          <Route path='/operator' element={<Operator />} />
+          <Route path='/feeding' element={<Feeding />} />
           <Route path='/winder' element={<h1></h1>} />
           <Route path='/inventory' element={<h1></h1>} />
           <Route path='/quality' element={<h1></h1>} />

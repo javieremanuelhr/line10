@@ -5,9 +5,9 @@ import '../index.css';
 
 const Sidebar = () => {
     return (
-        <div className="flex flex-col bg-gray-800 h-screen w-1/6 ">
+        <div className="flex flex-col bg-[#0f1214] h-screen w-1/6 ">
             {/* Logo Section */}
-            <div className="flex items-center justify-start px-6 bg-gray-800 h-16">
+            <div className="flex items-center justify-start px-6 h-16">
                 <h1 className="text-white text-2xl font-bold">LINE 10</h1>
             </div>
 

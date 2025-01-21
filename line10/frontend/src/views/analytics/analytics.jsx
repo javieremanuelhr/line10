@@ -1,16 +1,19 @@
 import { react } from 'react';
 import '../../index.css';
 import BasicBars from './barchart';
+import BasicLineChart from './linechart';
 
 function Analytics () {
     return(
-        <div className='bg-[#444950] h-screen screen flex flex-col'>
-            <div>
+        <div className='bg-[#ffffff] h-screen screen flex flex-col p-4'>
+            <div className='text-[#0f1214] text-2xl font-bold'>
             <h1>Analytics</h1>
-            <p>analytics goes right here xd</p>
             </div>
             <div>
                 <BasicBars />
+            </div>
+            <div>
+                <BasicLineChart />
             </div>
         </div>
     )
