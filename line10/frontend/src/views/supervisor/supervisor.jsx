@@ -2,9 +2,10 @@ import { react } from "react-dom";
 
 function Supervisor () {
     return(
-        <div>
+        <div className="bg-[#ffffff] h-screen screen flex flex-col p-4">
+        <div className="text-[#0f1214] text-2xl font-bold">
             <h1>Supervisor</h1>
-            <p>Supervisor stuff here</p>
+        </div>
         </div>
     )
 }

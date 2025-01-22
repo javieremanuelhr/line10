@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Router>
-    <div className='flex flex-row'>
+    <div className='flex flex-row h-screen'>
       <Sidebar />
       <div className='w-screen'>
         <Routes>
