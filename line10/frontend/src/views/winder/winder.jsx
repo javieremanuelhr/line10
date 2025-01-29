@@ -29,7 +29,7 @@ const Winder = () => {
             <h1>Winder</h1>
         </div>
         <div>
-        <table className='w-full border-separate border-spacing-2 '>
+        <table className='w-full border-collapse border-spacing-2 '>
       <thead>
         <tr>
           <th className='border border-slate-600 rounded-md'>Date</th>
