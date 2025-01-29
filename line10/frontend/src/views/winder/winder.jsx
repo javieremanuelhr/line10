@@ -28,7 +28,7 @@ const Winder = () => {
         <div className="text-[#0f1214] text-2xl font-bold p-4">
             <h1>Winder</h1>
         </div>
-        <div>
+        <div className='px-2'>
         <table className='w-full border-collapse border-spacing-2 '>
       <thead>
         <tr>

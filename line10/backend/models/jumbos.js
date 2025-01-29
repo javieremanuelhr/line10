@@ -32,7 +32,8 @@ const jumbosSchema = mongoose.Schema(
         },
         corona: {
             type: Boolean,
-            required: true,
+            required: false,
+            default: false,
         },
         in: {
             type: String,

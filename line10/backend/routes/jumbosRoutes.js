@@ -15,7 +15,7 @@ router.post('/', async (request, response) => {
         !request.body.thickness ||
         !request.body.width ||
         !request.body.length ||
-        !request.body.corona ||
+
         !request.body.in ||
         !request.body.out ||
         !request.body.status
