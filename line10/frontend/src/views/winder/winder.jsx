@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { AiOutlineEdit } from 'react-icons/ai';
-import { BsInfoCircle } from 'react-icons/bs';
+
 import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import { useState, useEffect } from 'react';
 
@@ -68,7 +68,6 @@ const Winder = () => {
                 <AiOutlineEdit className='text-green-500 mx-1' />
               </Link>
               <MdOutlineDelete className='text-red-500 mx-1' />
-              <MdOutlineAddBox className='text-yellow-500 mx-1' />
             </div>
             </td>
           </tr>

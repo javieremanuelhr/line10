@@ -112,20 +112,22 @@ router.put('/:id', async (req, res) => {
 
 //Delete bag by ID
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', async (request, response) => {
     try {
-        const bag = await Bag.findById(req.params.id);
-        if (bag) {
-            await bag.remove();
-            return res.status(200).send({ message: 'Bag removed' });
-        } else {
-            return res.status(404).send({ message: 'Bag not found' });
-        }
+      const { id } = request.params;
+  
+      const result = await Bag.findByIdAndDelete(id);
+  
+      if (!result) {
+        return response.status(404).json({ message: 'Book not found' });
+      }
+  
+      return response.status(200).send({ message: 'Book deleted successfully' });
     } catch (error) {
-        console.log('Error deleting bag: ', error);
-        return res.status(500).send({ message: 'Error deleting bag' });
+      console.log(error.message);
+      response.status(500).send({ message: error.message });
     }
-});
+  });
 
 export default router;
 

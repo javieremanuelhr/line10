@@ -5,7 +5,7 @@ import '../index.css';
 
 const Sidebar = () => {
     return (
-        <div className="flex flex-col bg-[#0f1214] h-screen w-1/6 ">
+        <div className="flex flex-col bg-[#0f1214] h-screen  ">
             {/* Logo Section */}
             <div className="flex items-center justify-start px-6 h-16">
                 <h1 className="text-white text-2xl font-bold">LINE 10</h1>
@@ -103,8 +103,7 @@ const Sidebar = () => {
                         Sample Page
                     </NavLink>
                 </div>
-            </div>
-            <div>
+                <div>
                 <p className="text-gray-500 text-sm uppercase font-semibold mb-2">Logout</p>
                 <NavLink
                     to="/logout"
@@ -114,6 +113,7 @@ const Sidebar = () => {
                     
                     <p class name="text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition">Account</p>
                 </NavLink>
+            </div>
             </div>
         </div>
     );

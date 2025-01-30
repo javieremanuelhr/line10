@@ -125,10 +125,10 @@ router.delete('/:id', async (request, response) => {
       const result = await Jumbo.findByIdAndDelete(id);
   
       if (!result) {
-        return response.status(404).json({ message: 'Book not found' });
+        return response.status(404).json({ message: 'Bag not found' });
       }
   
-      return response.status(200).send({ message: 'Book deleted successfully' });
+      return response.status(200).send({ message: 'Bag deleted successfully' });
     } catch (error) {
       console.log(error.message);
       response.status(500).send({ message: error.message });
