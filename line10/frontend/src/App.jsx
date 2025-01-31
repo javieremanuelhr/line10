@@ -11,6 +11,7 @@ import Winder from './views/winder/winder';
 import DeleteBag from './views/feeding/deleteBag';
 import Topbar from './components/topbar';
 import CreateBag from './views/feeding/createBag';
+import EditBag from './views/feeding/editBag';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/quality" element={<h1></h1>} />
           <Route path="/feeding/delete/:id" element={<DeleteBag />} />
           <Route path="/feeding/create" element={<CreateBag />} />
+          <Route path="/feeding/edit/:id" element={<EditBag />} />
         </Routes>
       </div>
     </div>

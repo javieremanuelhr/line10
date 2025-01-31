@@ -34,7 +34,7 @@ const Feeding = () => {
             </Link>
         </div>
         <div className='px-2'>
-        <table className='w-full border-collapse border-spacing-2 '>
+        <table className='w-full border-collapse border-spacing-2 bg-[#0f1214] text-white'>
       <thead>
         <tr>
           <th className='border border-slate-600 rounded-md'>Date</th>

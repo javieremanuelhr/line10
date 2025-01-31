@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BackButton from './backbutton';
 
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
-const CreateBag = () => {
+const EditBag = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [shift, setShift] = useState('');
@@ -20,31 +20,55 @@ const CreateBag = () => {
   const [operator, setOperator] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const {id} = useParams();
   const { enqueueSnackbar } = useSnackbar();
 
-  const handleSaveBag = () => {
+  useEffect(() => {
+    setLoading(true);
+    axios.get(`http://localhost:5555/bags/${id}`)
+    .then((response) => {
+        setDate(response.data.date);
+        setTime(response.data.time)
+        setShift(response.data.shift)
+        setMaterial(response.data.material)
+        setProvider(response.data.provider)
+        setFlexLot(response.data.flexLot)
+        setProviderLot(response.data.providerLot)
+        setBagNumber(response.data.bagNumber)
+        setWeight(response.data.weight)
+        setHopper(response.data.hopper)
+        setSilo(response.data.silo)
+        setOperator(response.data.operator)
+        setLoading(false);
+      }).catch((error) => {
+        setLoading(false);
+        alert('An error happened. Please Chack console');
+        console.log(error);
+      });
+  }, [])
+  
+  const handleEditBag = () => {
     const data = {
-      date,
-      time,
-      shift,
-      material,
-      provider,
-      flexLot,
-      providerLot,
-      bagNumber,
-      weight,
-      hopper,
-      silo,
-      operator,
+        date,
+        time,
+        shift,
+        material,
+        provider,
+        flexLot,
+        providerLot,
+        bagNumber,
+        weight,
+        hopper,
+        silo,
+        operator,
     };
-
     setLoading(true);
     axios
-      .post('http://localhost:5555/bags', data)
+      .put(`http://localhost:5555/bags/${id}`, data)
       .then(() => {
         setLoading(false);
-        enqueueSnackbar('Bag Created successfully', { variant: 'success' });
-        navigate('/feeding');
+        enqueueSnackbar('Bag Edited successfully', { variant: 'success' });
+        navigate('/');
       })
       .catch((error) => {
         setLoading(false);
@@ -57,7 +81,7 @@ const CreateBag = () => {
   return (
     <div className='p-4'>
       <BackButton />
-      <h1 className='text-3xl my-4'>Create Bag</h1>
+      <h1 className='text-3xl my-4'>Edit Book</h1>
 
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
         <div className='my-4'>
@@ -168,12 +192,12 @@ const CreateBag = () => {
             className='border-2 border-gray-500 px-4 py-2  w-full '
           />
         </div>
-        <button onClick={handleSaveBag} className='p-2 bg-sky-300 m-8'>
+        <button onClick={handleEditBag} className='p-2 bg-sky-300 m-8'>
           Save
         </button>
       </div>
     </div>
-  );
-}
+  )
+};
 
-export default CreateBag;
+export default EditBag;
