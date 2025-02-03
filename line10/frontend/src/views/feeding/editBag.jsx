@@ -68,7 +68,7 @@ const EditBag = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Bag Edited successfully', { variant: 'success' });
-        navigate('/');
+        navigate('/feeding');
       })
       .catch((error) => {
         setLoading(false);
