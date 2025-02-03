@@ -1,5 +1,58 @@
 import mongoose from 'mongoose';
 
+const MaterialConsumptionSchema = mongoose.Schema ({
+    rgg: {        
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    matRgg: {
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    mg: {
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    recron: {
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    garden:{
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    indorama: {
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    chinese: {
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    silica: {
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    pcr: {
+        type: Number,
+        required: false,
+        default: 0,
+    },
+    pcrRgg: {
+        type: Number,
+        required: false,
+        default: 0,
+    },
+});
+
 const productionSchema = mongoose.Schema(
     {
         date: {
@@ -96,6 +149,7 @@ const productionSchema = mongoose.Schema(
             required: false,
             default: 0,
         },
+        materialConsumption: MaterialConsumptionSchema,
     },
     {
         timestamps: true,
