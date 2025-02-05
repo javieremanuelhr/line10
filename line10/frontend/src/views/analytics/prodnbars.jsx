@@ -4,7 +4,7 @@ import { axisClasses } from '@mui/x-charts';
 
 export default function ProdnBars() {
   return (
-    <div className="w-full overflow-hidden rounded-lg text-center pt-2">
+    <div className="w-full overflow-hidden rounded-lg text-center pt-2 ">
       <div className='text-white'>Production per Team</div>
       <BarChart
         xAxis={[{ scaleType: 'band', data: ['A', 'B', 'C', 'D'] }]}

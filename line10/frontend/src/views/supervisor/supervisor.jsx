@@ -1,78 +1,46 @@
 import { react } from "react-dom";
+import '../../index.css'
 
 function Supervisor() {
   return (
-    <div className="bg-[#ffffff] h-screen flex flex-col p-4">
-      <div className="text-[#0f1214] text-2xl font-bold">
+    <div className="bg-[#ffffff] h-screen flex flex-col p-4 gap-4 font-[montserrat] ">
+      <div className="text-[#0f1214] text-2xl font-semibold">
         <h1>Supervisor</h1>
       </div>
 
-      <div className="overflow-x-auto p-4">
-        <table className="w-full border border-black text-sm text-center">
-          <thead>
-            <tr className="bg-gray-400 text-black font-bold">
-              <th className="border border-black p-2" colSpan="2">SHIFT PRODUCTION REPORT - Main line</th>
-              <th className="border border-black p-2 w-[150px]">Shift A</th>
-              <th className="border border-black p-2 w-[150px]">Shift B</th>
-              <th className="border border-black p-2 w-[150px]">Shift C</th>
-              <th className="border border-black p-2 w-[150px]">DAY</th>
-            </tr>
-            <tr className="bg-gray-300 font-semibold">
-              <th className="border border-black p-2" colSpan="2">SUPERVISOR</th>
-              <th className="border border-black p-2 w-[150px]">JAVIER | GERARDO</th>
-              <th className="border border-black p-2 w-[150px]">JAVIER</th>
-              <th className="border border-black p-2 w-[150px]">FCO | EDUARDO</th>
-              <th className="border border-black p-2 w-[150px]"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="bg-gray-200 font-bold">
-              <td className="border border-black p-2" colSpan="2">Raw material consumption (kg)</td>
-              <td className="border border-black p-2 w-[150px]"></td>
-              <td className="border border-black p-2 w-[150px]"></td>
-              <td className="border border-black p-2 w-[150px]"></td>
-              <td className="border border-black p-2 w-[150px]"></td>
-            </tr>
-            {[
-              ["GARDEN / FULLBRIGHT / INDORAMA", 3358, 4800, 4544, 12702],
-              ["MG", 16330, 21457, 18595, 56381],
-              ["RGG", 9476, 12578, 10900, 32954],
-              ["R6", 2262, 2960, 2565, 7787],
-              ["PCR", 0, 0, 0, 0]
-            ].map(([name, a, b, c, day], i) => (
-              <tr key={i} className="bg-pink-100">
-                <td className="border border-black p-2" colSpan="2">{name}</td>
-                <td className="border border-black p-2 w-[150px]">{a}</td>
-                <td className="border border-black p-2 w-[150px]">{b}</td>
-                <td className="border border-black p-2 w-[150px]">{c}</td>
-                <td className="border border-black p-2 w-[150px]">{day}</td>
+      <div className="overflow-x-auto p-4 bg-[#0f1214] rounded-lg h-screen flex flex-col gap-4 text-white">
+        
+        <div className="bg-slate-800 rounded-lg w-full h-full flex items-center justify-center p-4 border border-slate-400">
+          <table className="w-full border-separate border-spacing-2 bg-purple-800 rounded-lg ">
+            <thead>
+              <tr>
+                <th className="w-1/4">Shift</th>
+                <th className="w-1/4">A</th>
+                <th className="w-1/4">B</th>
+                <th className="w-1/4">C</th>
               </tr>
-            ))}
-            <tr className="bg-gray-200 font-bold">
-              <td className="border border-black p-2" colSpan="2">Total of Raw material consumption (kg)</td>
-              <td className="border border-black p-2 w-[150px]">31,426</td>
-              <td className="border border-black p-2 w-[150px]">41,794</td>
-              <td className="border border-black p-2 w-[150px]">36,604</td>
-              <td className="border border-black p-2 w-[150px]">109,824</td>
-            </tr>
-            {[
-              ["Jumbo Production for Stand (good quality) (kg)", 35131, 35873, 27510, 98514, "text-blue-600 bg-yellow-300"],
-              ["Film For Recycle (Silo Erema) (kg) (F-Rec)", -3705, 5921, 9094, 11310, "text-red-600"],
-              ["Production Efficiency (%)", "112%", "86%", "75%", "89.70%", "text-green-600"],
-              ["Down time (minutes)", 22, 0, 106, 128, "text-red-600"],
-              ["Production loss time (minutes)", 0, 0, 0, 0, "text-blue-600"],
-              ["DT+PLT", 86, 0, 0, 86, "bg-yellow-300"]
-            ].map(([label, a, b, c, day, color], i) => (
-              <tr key={i} className={color}>
-                <td className="border border-black p-2 font-bold" colSpan="2">{label}</td>
-                <td className="border border-black p-2 w-[150px]">{a}</td>
-                <td className="border border-black p-2 w-[150px]">{b}</td>
-                <td className="border border-black p-2 w-[150px]">{c}</td>
-                <td className="border border-black p-2 w-[150px]">{day}</td>
+            </thead>
+            <tbody className="">
+              <tr>
+                <th className="w-1/4">RGG</th>
+                <th></th>
+                <th></th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+              <tr><th className="w-1/4">MG</th></tr>
+              <tr><th className="w-1/4">Recron</th></tr>
+              <tr><th className="w-1/4">Garden</th></tr>
+              <tr><th className="w-1/4">Chinese</th></tr>
+              <tr><th className="w-1/4">PCR</th></tr>
+              <tr><th className="w-1/4">RGGPCR</th></tr>
+              <tr><th className="w-1/4">RGGMat</th></tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="bg-slate-800 rounded-lg w-full h-full flex items-center justify-center p-4 border border-slate-400">
+          b
+        </div>
+
       </div>
     </div>
   );
