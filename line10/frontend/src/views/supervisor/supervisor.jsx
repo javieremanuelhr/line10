@@ -1,7 +1,14 @@
 import { react } from "react-dom";
+import { useState } from "react";
 import '../../index.css'
+import Prodn from "./prodn";
+import Jumbo from "./jumbo";
+import OutputA from "./outputA";
 
 function Supervisor() {
+
+
+
   return (
     <div className="bg-[#ffffff] h-screen flex flex-col p-4 gap-4 font-[montserrat] ">
       <div className="text-[#0f1214] text-2xl font-semibold">
@@ -9,38 +16,36 @@ function Supervisor() {
       </div>
 
       <div className="overflow-x-auto p-4 bg-[#0f1214] rounded-lg h-screen flex flex-col gap-4 text-white">
-        
-        <div className="bg-slate-800 rounded-lg w-full h-full flex items-center justify-center p-4 border border-slate-400">
-          <table className="w-full border-separate border-spacing-2 bg-purple-800 rounded-lg ">
-            <thead>
-              <tr>
-                <th className="w-1/4">Shift</th>
-                <th className="w-1/4">A</th>
-                <th className="w-1/4">B</th>
-                <th className="w-1/4">C</th>
-              </tr>
-            </thead>
-            <tbody className="">
-              <tr>
-                <th className="w-1/4">RGG</th>
-                <th></th>
-                <th></th>
-                <th></th>
-              </tr>
-              <tr><th className="w-1/4">MG</th></tr>
-              <tr><th className="w-1/4">Recron</th></tr>
-              <tr><th className="w-1/4">Garden</th></tr>
-              <tr><th className="w-1/4">Chinese</th></tr>
-              <tr><th className="w-1/4">PCR</th></tr>
-              <tr><th className="w-1/4">RGGPCR</th></tr>
-              <tr><th className="w-1/4">RGGMat</th></tr>
-            </tbody>
-          </table>
+        {/*Date*/}
+        <div className="bg-slate-800 rounded-lg w-full h-1/8 flex items-center justify-center p-4 border border-slate-400">
+          <div className="w-full h-full bg-teal-400 rounded-lg text text-black font-semibold flex justify-center items-center">
+            DATE: MM/DD/YYYY
+          </div>
         </div>
-        <div className="bg-slate-800 rounded-lg w-full h-full flex items-center justify-center p-4 border border-slate-400">
-          b
+        
+        {/*Prodn&MaterialConsumption*/}
+        <div className="flex flex-col gap-4 lg:flex-row">
+        <div className="bg-slate-800 rounded-lg w-full h-full flex flex-col items-center justify-center p-4 border border-slate-400">
+          <div className="pb-4">Prodn & Material Consumption</div>
+          <div className="w-full">
+            <Prodn />
+          </div>
         </div>
 
+{/*//////////////////////////////////////////////////////////////////////*/}
+
+        {/*Calculator*/}
+        <div className="bg-slate-800 rounded-lg w-full h-full flex flex-col items-center justify-center p-4 border gap-4 border-slate-400">
+          <div>ERP Jumbo Fast Calculator</div>
+          <Jumbo />
+        </div>
+        </div>
+        <div className="bg-slate-800 rounded-lg w-full h-full flex items-center justify-center p-4 border border-slate-400 flex-col">
+        <div className="pb-4">Recipe & Throughput</div>
+          <div className="w-full">
+            <OutputA />
+          </div>
+        </div>
       </div>
     </div>
   );

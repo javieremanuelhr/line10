@@ -149,6 +149,18 @@ const productionSchema = mongoose.Schema(
             required: false,
             default: 0,
         },
+        supA: {
+            type: String,
+            required: false,
+        },
+        supB: {
+            type: String,
+            required: false,
+        },
+        supC: {
+            type: String,
+            required: false,
+        },
         materialConsumption: MaterialConsumptionSchema,
     },
     {
