@@ -1,17 +1,17 @@
 import React from 'react'
 import '../../index.css'
 
-const OutputA = () => {
+const OutputC = () => {
   return (
     <div className='w-full h-full font-semibold text text-center border flex flex-col'>
-        <table className='w-full border-separate'>
+        <table className='bg-lime-500 w-full'>
             <thead>
                 <tr className='bg-black'>
                     <th>Throuhput</th>
                     <th>Qty</th>
                 </tr>
             </thead>
-            <tbody className='bg-blue-500'>
+            <tbody>
                 <tr>
                     <td>Main</td>
                     <td className='w-1/2'><input className='w-full'></input></td>
@@ -26,7 +26,7 @@ const OutputA = () => {
                 </tr>
             </tbody>
         </table>
-        <table className='w-full border-separate'>
+        <table className='w-full'>
             <thead>
                 <tr className='bg-black'>
                     <th className='w-1/4'>MAIN</th>
@@ -35,7 +35,7 @@ const OutputA = () => {
                     <th className='w-1/4'>III</th>
                 </tr>
             </thead>
-            <tbody className='bg-blue-500'>
+            <tbody>
                 <tr>
                     <td>RGG</td>
                     <td></td>
@@ -120,16 +120,10 @@ const OutputA = () => {
                     <td></td>
                     <td></td>
                 </tr>
-                <tr className='bg-black'>
-                    <td>TIME</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
             </tbody>
         </table>
     </div>
   )
 }
 
-export default OutputA
+export default OutputC

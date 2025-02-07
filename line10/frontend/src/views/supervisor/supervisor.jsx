@@ -4,6 +4,8 @@ import '../../index.css'
 import Prodn from "./prodn";
 import Jumbo from "./jumbo";
 import OutputA from "./outputA";
+import OutputB from "./outputB";
+import OutputC from "./outputC";
 
 function Supervisor() {
 
@@ -40,10 +42,12 @@ function Supervisor() {
           <Jumbo />
         </div>
         </div>
-        <div className="bg-slate-800 rounded-lg w-full h-full flex items-center justify-center p-4 border border-slate-400 flex-col">
-        <div className="pb-4">Recipe & Throughput</div>
-          <div className="w-full">
+        <div className="bg-slate-800 rounded-lg w-full flex items-center justify-center p-4 border border-slate-400 flex-col gap-4">
+          <div className="">Recipe & Throughput</div> {/* Add padding to title */}
+          <div className="w-full gap-4 flex flex-col overflow-auto md:flex-row"> {/* Use overflow-auto */}
             <OutputA />
+            <OutputB />
+            <OutputC />
           </div>
         </div>
       </div>
