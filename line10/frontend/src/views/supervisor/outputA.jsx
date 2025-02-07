@@ -2,6 +2,9 @@ import React from 'react'
 import '../../index.css'
 
 const OutputA = () => {
+
+
+
   return (
     <div className='w-full h-full font-semibold text text-center border flex flex-col'>
         <table className='w-full border-separate'>

@@ -4,14 +4,14 @@ import '../../index.css'
 const OutputC = () => {
   return (
     <div className='w-full h-full font-semibold text text-center border flex flex-col'>
-        <table className='bg-lime-500 w-full'>
+        <table className='w-full border-separate'>
             <thead>
                 <tr className='bg-black'>
                     <th>Throuhput</th>
                     <th>Qty</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className='bg-purple-500'>
                 <tr>
                     <td>Main</td>
                     <td className='w-1/2'><input className='w-full'></input></td>
@@ -26,7 +26,7 @@ const OutputC = () => {
                 </tr>
             </tbody>
         </table>
-        <table className='w-full'>
+        <table className='w-full border-separate'>
             <thead>
                 <tr className='bg-black'>
                     <th className='w-1/4'>MAIN</th>
@@ -35,7 +35,7 @@ const OutputC = () => {
                     <th className='w-1/4'>III</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className='bg-purple-500'>
                 <tr>
                     <td>RGG</td>
                     <td></td>
@@ -116,6 +116,12 @@ const OutputC = () => {
                 </tr>
                 <tr>
                     <td>Other</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr className='bg-black'>
+                    <td>TIME</td>
                     <td></td>
                     <td></td>
                     <td></td>
