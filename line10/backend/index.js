@@ -6,6 +6,9 @@ import bagsRoutes from './routes/bagsRoutes.js';
 import productionRoutes from './routes/productionRoutes.js';
 import cors from 'cors';
 
+import jwt from 'jsonwebtoken';
+import cookieParser from 'cookie-parser';
+
 const app = express();
 
 //Middleware to allow frontend to make requests to backend from port 5173

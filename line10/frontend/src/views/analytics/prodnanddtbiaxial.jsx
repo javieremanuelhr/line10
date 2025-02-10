@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BarChart } from '@mui/x-charts/BarChart';
+import { LineChart } from '@mui/x-charts/LineChart';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
@@ -20,25 +20,25 @@ const xLabels = [
 ];
 
 const darkTheme = createTheme({
-    palette: {
-      mode: 'dark',
-    },
-  });
+  palette: {
+    mode: 'dark',
+  },
+});
 
-export default function Prodnanddowntime() {
+export default function ProdnAndDtBiaxial() {
   return (
-    <div className='p-4 w-full flex align-center bg-slate-800 rounded-lg border border-slate-400 md:h-1/2'>
+    <div className='flex align-center bg-slate-800 border border-slate-400 rounded-lg p-4 md:h-1/2'>
     <ThemeProvider theme={darkTheme}>
-    <BarChart
+    <LineChart
       width={500}
       height={300}
-      margin={{ right: 0 }}
-      colors={['#18ffff', '#FFA500']}
       series={[
-        { data: pData, label: 'prodn', id: 'prodnId' },
-        { data: uData, label: 'dt', id: 'dtId' },
+        { data: pData, label: 'pv', yAxisId: 'leftAxisId' },
+        { data: uData, label: 'uv', yAxisId: 'rightAxisId' },
       ]}
-      xAxis={[{ data: xLabels, scaleType: 'band' }]}
+      xAxis={[{ scaleType: 'point', data: xLabels }]}
+      yAxis={[{ id: 'leftAxisId' }, { id: 'rightAxisId' }]}
+      rightAxis="rightAxisId"
     />
     </ThemeProvider>
     </div>

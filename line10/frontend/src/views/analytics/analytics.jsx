@@ -6,7 +6,7 @@ import ProdnBars from './prodnbars';
 import LineOE from './lineoe';
 import Pieidk from './pieidk';
 
-import Prodnovertime from './prodnovertime';
+import ProdnAndDtBiaxial from './prodnanddtbiaxial';
 import Prodnanddowntime from './prodnanddowntime';
 
 function Analytics() {
@@ -29,9 +29,9 @@ function Analytics() {
                         <DowntimeBars />
                         <Pieidk />
                     </div>
-                    <div className="w-full h-full md:w-3/4">
+                    <div className="flex flex-col gap-4 w-full h-full md:w-3/4">
                         <Prodnanddowntime />
-                        
+                        <ProdnAndDtBiaxial />
                     </div>
                 </div>
             </div>
