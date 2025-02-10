@@ -4,8 +4,9 @@ import { axisClasses } from '@mui/x-charts';
 
 export default function DowntimeBars() {
   return (
-    <div className="w-full overflow-hidden rounded-lg pt-2 text-center">
+    <div className="w-full overflow-hidden rounded-lg pt-2 text-center flex align-center flex-col bg-slate-800 border border-slate-400">
       <div className="text-white">Downtime per Team</div>
+      <div className='flex align-center'>
       <BarChart
         xAxis={[{ scaleType: 'band', data: ['A', 'B', 'C', 'D'] }]}
         series={[
@@ -27,6 +28,7 @@ export default function DowntimeBars() {
           },
         })}
       />
+      </div>
     </div>
   );
 }

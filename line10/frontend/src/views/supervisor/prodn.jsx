@@ -13,7 +13,7 @@ const prodn = () => {
                 <th className="w-1/4">C</th>
               </tr>
             </thead>
-            <tbody className="bg-cyan-600">
+            <tbody className="bg-teal-500">
               <tr className="bg-pink-800">
                 <th className="w-1/4">Lead</th>
                 <th className="w-1/4"><input className="text text-center w-full"></input></th>

@@ -44,6 +44,38 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.delete('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const deletedProduction = await Production.findByIdAndDelete(id);
+
+        if (!deletedProduction) {
+            return res.status(404).json({ message: 'Production record not found' });
+        }
+
+        return res.status(200).json({ message: 'Production record deleted successfully', data: deletedProduction });
+    } catch (error) {
+        console.error('Error deleting production record:', error);
+        return res.status(500).json({ message: 'Error deleting production record' });
+    }
+});
+
+router.get('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const productionRecord = await Production.findById(id);
+
+        if (!productionRecord) {
+            return res.status(404).json({ message: 'Production record not found' });
+        }
+
+        return res.status(200).json({ data: productionRecord });
+    } catch (error) {
+        console.error('Error fetching production record:', error);
+        return res.status(500).json({ message: 'Error fetching production record' });
+    }
+});
+
 
 
 

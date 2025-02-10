@@ -21,6 +21,7 @@ const Jumbo = () => {
     const [mainPcr, setMainPcr] = useState(0);
     const [mainRggPcr, setMainRggPcr] = useState(0);
     const [mainRggMat, setMainRggMat] = useState(0);
+    const [mainP3k1, setMainP3k1] = useState(0);
 
     {/*Coex Variables*/}
 
@@ -33,6 +34,7 @@ const Jumbo = () => {
     const [coexPcr, setCoexPcr] = useState(0);
     const [coexRggPcr, setCoexRggPcr] = useState(0);
     const [coexRggMat, setCoexRggMat] = useState(0);
+    const [coexP3k1, setCoexP3k1] = useState(0);
 
     {/*Quantities Variables*/}
 
@@ -70,7 +72,8 @@ const Jumbo = () => {
     const pcrQty = ((Number(total)/100)*Number(mainPcr))*(Number(mainLayer)/100) + ((Number(total)/100)*Number(coexPcr))*(Number(coexLayer)/100);
     const rggPcrQty = ((Number(total)/100)*Number(mainRggPcr))*(Number(mainLayer)/100) + ((Number(total)/100)*Number(coexRggPcr))*(Number(coexLayer)/100);
     const rggMatQty = ((Number(total)/100)*Number(mainRggMat))*(Number(mainLayer)/100) + ((Number(total)/100)*Number(coexRggMat))*(Number(coexLayer)/100);
-    const absoluteTotal = Number(rggQty) + Number(mgQty) + Number(recronQty) + Number(gardenQty) + Number(chineseQty) + Number(silicaQty) + Number(pcrQty) + Number(rggPcrQty) + Number(rggMatQty);
+    const p3k1Qty = ((Number(total)/100)*Number(mainP3k1))*(Number(mainLayer)/100) + ((Number(total)/100)*Number(coexP3k1))*(Number(coexLayer)/100);
+    const absoluteTotal = Number(rggQty) + Number(mgQty) + Number(recronQty) + Number(gardenQty) + Number(chineseQty) + Number(silicaQty) + Number(pcrQty) + Number(rggPcrQty) + Number(rggMatQty) + Number(p3k1Qty);
 
 return (
     <div className="w-full h-full flex flex-col">
@@ -153,6 +156,12 @@ return (
                                 <td className="w-1/4"><input onChange={(e) => {setMainRggMat(Number(e.target.value))}} className="text text-center w-full"></input></td>
                                 <td className="w-1/4"><input onChange={(e) => {setCoexRggMat(Number(e.target.value))}} className="text text-center w-full"></input></td>
                                 <td className="w-1/4"><label className="text text-center w-full"></label>{rggMatQty}</td>
+                            </tr>
+                            <tr>
+                            <td className="w-1/4">P3K1</td>
+                                <td className="w-1/4"><input onChange={(e) => {setMainP3k1(Number(e.target.value))}} className="text text-center w-full"></input></td>
+                                <td className="w-1/4"><input onChange={(e) => {setCoexP3k1(Number(e.target.value))}} className="text text-center w-full"></input></td>
+                                <td className="w-1/4"><label className="text text-center w-full">{p3k1Qty}</label></td>
                             </tr>
                             <tr className='bg-black'>
                             <td className="w-1/4">Skin Layer</td>
