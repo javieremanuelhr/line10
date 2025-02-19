@@ -7,6 +7,8 @@ import OutputA from "./outputA";
 import OutputB from "./outputB";
 import OutputC from "./outputC";
 
+import ControlledComponent from "./date";
+
 function Supervisor() {
 
 
@@ -20,8 +22,8 @@ function Supervisor() {
       <div className="overflow-x-auto p-4 bg-[#0f1214] rounded-lg h-screen flex flex-col gap-4 text-white">
         {/*Date*/}
         <div className="bg-slate-800 rounded-lg w-full h-1/8 flex items-center justify-center p-4 border border-slate-400">
-          <div className="w-full h-full bg-teal-400 rounded-lg text text-black font-semibold flex justify-center items-center">
-            DATE: MM/DD/YYYY
+          <div className="w-full h-full text-black font-semibold flex justify-center items-center">
+            <ControlledComponent />
           </div>
         </div>
         

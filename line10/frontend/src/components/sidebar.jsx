@@ -18,9 +18,12 @@ const Sidebar = () => {
                     <div>
                         <p className="text-gray-500 text-sm uppercase font-semibold mb-2">Home</p>
                         <NavLink
-                            to="/"
-                            className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
-                            activeClassName="bg-gray-700 text-white"
+                            to="/analytics"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "flex items-center text-white bg-blue-600 px-3 py-2 rounded-md transition"
+                                    : "flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                            }
                         >
                             Analytics
                         </NavLink>
@@ -31,49 +34,63 @@ const Sidebar = () => {
                         <p className="text-gray-500 text-sm uppercase font-semibold mb-2">Roles</p>
                         <NavLink
                             to="/supervisor"
-                            className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
-                            activeClassName="bg-gray-700 text-white"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "flex items-center text-white bg-blue-600 px-3 py-2 rounded-md transition"
+                                    : "flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                            }
                         >
                             Supervisor
                         </NavLink>
                         <NavLink
                             to="/operator"
-                            className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
-                            activeClassName="bg-gray-700 text-white"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "flex items-center text-white bg-blue-600 px-3 py-2 rounded-md transition"
+                                    : "flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                            }
                         >
                             Operator
                         </NavLink>
                         <NavLink
                             to="/feeding"
-                            className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
-                            activeClassName="bg-gray-700 text-white"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "flex items-center text-white bg-blue-600 px-3 py-2 rounded-md transition"
+                                    : "flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                            }
                         >
                             Feeding
                         </NavLink>
                         <NavLink
                             to="/winder"
-                            className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
-                            activeClassName="bg-gray-700 text-white"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "flex items-center text-white bg-blue-600 px-3 py-2 rounded-md transition"
+                                    : "flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                            }
                         >
                             Winder
                         </NavLink>
-                    </div>
-
-                    {/* Extra Section */}
-                    <div>
-                        <p className="text-gray-500 text-sm uppercase font-semibold mb-2">Extra</p>
                         <NavLink
-                            to="/icons"
-                            className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
-                            activeClassName="bg-gray-700 text-white"
+                            to="/lab"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "flex items-center text-white bg-blue-600 px-3 py-2 rounded-md transition"
+                                    : "flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                            }
                         >
-                            Icons
+                            Laboratory
                         </NavLink>
                         <NavLink
-                            to="/sample"
-                            className="flex items-center hover:text-white hover:bg-blue-500 px-3 py-2 rounded-md bg-blue-600 text-white transition"
+                            to="/slitter"
+                            className={({ isActive }) =>
+                                isActive
+                                    ? "flex items-center text-white bg-blue-600 px-3 py-2 rounded-md transition"
+                                    : "flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                            }
                         >
-                            Sample Page
+                            Slitter
                         </NavLink>
                     </div>
                 </div>
@@ -84,8 +101,11 @@ const Sidebar = () => {
                 <p className="text-gray-500 text-sm uppercase font-semibold mb-2">Logout</p>
                 <NavLink
                     to="/logout"
-                    className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
-                    activeClassName="bg-gray-700 text-white"
+                    className={({ isActive }) =>
+                        isActive
+                            ? "flex items-center text-white bg-blue-600 px-3 py-2 rounded-md transition"
+                            : "flex items-center text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-2 rounded-md transition"
+                    }
                 >
                     Account
                 </NavLink>

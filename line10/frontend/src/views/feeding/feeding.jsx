@@ -26,9 +26,9 @@ const Feeding = () => {
 }, []);
 
   return (
-    <div className="bg-[#ffffff] h-screen screen flex flex-col ">
-        <div className="text-[#0f1214] text-2xl font-bold p-4 flex flex-row ">
-            <h1>Feeding</h1>
+    <div className="bg-[#ffffff] h-screen screen flex flex-col font-[montserrat]">
+        <div className="text-[#0f1214] text-2xl font-bold p-4 flex flex-row items-center">
+            <h1 className='font-semibold'>Feeding</h1>
             <Link to='/feeding/create'>
               <MdOutlineAddBox className='text-yellow-500 mx-1' />
             </Link>

@@ -9,7 +9,28 @@ import Pieidk from './pieidk';
 import ProdnAndDtBiaxial from './prodnanddtbiaxial';
 import Prodnanddowntime from './prodnanddowntime';
 
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 function Analytics() {
+    const [message, setMessage] = useState()
+    const navigate = useNavigate()
+    axios.defaults.withCredentials = true;
+    useEffect(() => {
+        axios.get('http://localhost:5555/analytics')
+        .then(res => {
+            console.log(res)
+            if(res.data.valid) {
+                setMessage(res.data.message)
+            } else {
+                navigate('/login')
+            }
+        })
+        .catch(err => console.log(err))
+    })
+
     return (
         <div className="bg-white min-h-screen flex flex-col gap-4 font-[montserrat] font-semibold p-4 mb-4">
             {/* Title */}

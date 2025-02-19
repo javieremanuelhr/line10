@@ -41,51 +41,51 @@ const OutputA = () => {
             <tbody className='bg-blue-500'>
                 <tr>
                     <td>RGG</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>MG</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>Recron</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>Garden</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>Silica</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>PCR</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>RGGPCR</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>RGGMat</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr className='bg-black'>
                     <td>COEX</td>
@@ -95,27 +95,39 @@ const OutputA = () => {
                 </tr>
                 <tr>
                     <td>MG</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>Recron</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>Garden</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>Silica</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                </tr>
+                <tr>
+                    <td>p3k1</td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                </tr>
+                <tr>
+                    <td>Embos</td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
                 <tr>
                     <td>Other</td>
@@ -125,9 +137,9 @@ const OutputA = () => {
                 </tr>
                 <tr className='bg-black'>
                     <td>TIME</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
+                    <td className='w-1/4'><input className="text text-center w-full"></input></td>
                 </tr>
             </tbody>
         </table>

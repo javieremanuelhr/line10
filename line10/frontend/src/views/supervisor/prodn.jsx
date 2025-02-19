@@ -74,39 +74,51 @@ const prodn = () => {
                 <th></th>
                 <th></th>
               </tr>
+              <tr>
+                <th className="w-1/4">P3k1</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+              <tr>
+                <th className='w-1/4'>Embos</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
             </tbody>
           </table>
           <table className="w-full border-separate border-spacing-0.5 ">
             <tbody className='bg-pink-700'>
               <tr>
                 <th className="w-1/4">Gross</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
               </tr>
               <tr>
                 <th className="w-1/4">Net</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
               </tr>
               <tr>
                 <th className="w-1/4">Recycled</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
               </tr>
               <tr>
                 <th className="w-1/4">Erema</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
               </tr>
               <tr>
                 <th className="w-1/4">Intarema</th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
+                <th className="w-1/4"><input className="text text-center w-full"></input></th>
               </tr>
             </tbody>
           </table>

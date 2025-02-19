@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Sidebar from './components/sidebar';
 import Navbar from './components/navbar';
 import './index.css';
-import Login from './views/login/login';
-import Analytics from './views/analytics/analytics';
-import Supervisor from './views/supervisor/supervisor';
-import Feeding from './views/feeding/feeding';
-import Operator from './views/operator/operator';
-import Winder from './views/winder/winder';
-import DeleteBag from './views/feeding/deleteBag';
-import Topbar from './components/topbar';
-import CreateBag from './views/feeding/createBag';
-import EditBag from './views/feeding/editBag';
+
+const Login = lazy(() => import('./views/login/login'));
+const Analytics = lazy(() => import('./views/analytics/analytics'));
+const Supervisor = lazy(() => import('./views/supervisor/supervisor'));
+const Feeding = lazy(() => import('./views/feeding/feeding'));
+const Operator = lazy(() => import('./views/operator/operator'));
+const Winder = lazy(() => import('./views/winder/winder'));
+const DeleteBag = lazy(() => import('./views/feeding/deleteBag'));
+const CreateBag = lazy(() => import('./views/feeding/createBag'));
+const EditBag = lazy(() => import('./views/feeding/editBag'));
 
 function App() {
   const location = useLocation();
@@ -29,19 +29,21 @@ function App() {
 
       {/* Scrollable Content Area (Prevents Scrolling Navbar & Topbar) */}
       <div className={`flex flex-col w-screen ${!isLoginPage ? 'sm:ml-64' : ''} h-full overflow-y-auto pb-16`}>
-        <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route path="/" element={<Analytics />} />
-          <Route path="/supervisor" element={<Supervisor />} />
-          <Route path="/operator" element={<Operator />} />
-          <Route path="/feeding" element={<Feeding />} />
-          <Route path="/winder" element={<Winder />} />
-          <Route path="/inventory" element={<h1>Inventory</h1>} />
-          <Route path="/quality" element={<h1>Quality</h1>} />
-          <Route path="/feeding/delete/:id" element={<DeleteBag />} />
-          <Route path="/feeding/create" element={<CreateBag />} />
-          <Route path="/feeding/edit/:id" element={<EditBag />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path='/login' element={<Login />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/supervisor" element={<Supervisor />} />
+            <Route path="/operator" element={<Operator />} />
+            <Route path="/feeding" element={<Feeding />} />
+            <Route path="/winder" element={<Winder />} />
+            <Route path="/inventory" element={<h1>Inventory</h1>} />
+            <Route path="/quality" element={<h1>Quality</h1>} />
+            <Route path="/feeding/delete/:id" element={<DeleteBag />} />
+            <Route path="/feeding/create" element={<CreateBag />} />
+            <Route path="/feeding/edit/:id" element={<EditBag />} />
+          </Routes>
+        </Suspense>
       </div>
 
       {/* Mobile Navbar (Fixed on Screen) */}
