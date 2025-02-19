@@ -98,7 +98,7 @@ app.get('/', (req, res) => {
 
 app.use('/jumbos', jumbosRoutes);
 app.use('/bags', bagsRoutes);
-app.use('/production', productionRoutes);
+app.use('/prodn', productionRoutes);
 
 //Connect to MongoDB
 

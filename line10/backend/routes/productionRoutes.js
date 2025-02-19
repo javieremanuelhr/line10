@@ -3,80 +3,71 @@ import { Production } from '../models/production.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-    try{
-        const bags = await Production.find();
-        return res.status(200).json({
-            count: bags.length,
-            data: bags
-        });
-    } catch (error) {
-        console.log('Error getting bags: ', error);
-        return res.status(500).send({ message: 'Error getting bags' });
-    }
-});
-
+// Crear un nuevo registro de producción
 router.post('/', async (req, res) => {
     try {
-        const {
-            date,
-            prodnA, mainA, coexA, eremaA, downtimeEremaA, intaremaA,
-            prodnB, mainB, coexB, eremaB, downtimeEremaB, intaremaB,
-            prodnC, mainC, coexC, eremaC, downtimeEremaC, intaremaC,
-            supA, supB, supC,
-            materialConsumption
-        } = req.body;
-
-        const newProduction = new Production({
-            date,
-            prodnA, mainA, coexA, eremaA, downtimeEremaA, intaremaA,
-            prodnB, mainB, coexB, eremaB, downtimeEremaB, intaremaB,
-            prodnC, mainC, coexC, eremaC, downtimeEremaC, intaremaC,
-            supA, supB, supC,
-            materialConsumption
-        });
-
+        const newProduction = new Production(req.body);
         await newProduction.save();
-        return res.status(201).json({ message: 'Production data saved successfully', data: newProduction });
+        res.status(201).json(newProduction);
     } catch (error) {
-        console.error('Error saving production data:', error);
-        return res.status(500).json({ message: 'Error saving production data' });
+        res.status(500).json({ error: error.message });
     }
 });
 
-router.delete('/:id', async (req, res) => {
+// Obtener todos los registros de producción
+router.get('/', async (req, res) => {
     try {
-        const { id } = req.params;
-        const deletedProduction = await Production.findByIdAndDelete(id);
-
-        if (!deletedProduction) {
-            return res.status(404).json({ message: 'Production record not found' });
-        }
-
-        return res.status(200).json({ message: 'Production record deleted successfully', data: deletedProduction });
+        const productions = await Production.find();
+        res.json(productions);
     } catch (error) {
-        console.error('Error deleting production record:', error);
-        return res.status(500).json({ message: 'Error deleting production record' });
+        res.status(500).json({ error: error.message });
     }
 });
 
+// Obtener un registro por ID
 router.get('/:id', async (req, res) => {
     try {
-        const { id } = req.params;
-        const productionRecord = await Production.findById(id);
-
-        if (!productionRecord) {
-            return res.status(404).json({ message: 'Production record not found' });
-        }
-
-        return res.status(200).json({ data: productionRecord });
+        const production = await Production.findById(req.params.id);
+        if (!production) return res.status(404).json({ message: "Registro no encontrado" });
+        res.json(production);
     } catch (error) {
-        console.error('Error fetching production record:', error);
-        return res.status(500).json({ message: 'Error fetching production record' });
+        res.status(500).json({ error: error.message });
     }
 });
 
+// Obtener registros por fecha
+router.get('/date/:date', async (req, res) => {
+    try {
+        const { date } = req.params;
+        const productions = await Production.find({
+            date: { $gte: new Date(`${date}T00:00:00.000Z`), $lte: new Date(`${date}T23:59:59.999Z`) }
+        });
+        res.json(productions);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
+// Actualizar un registro por ID
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedProduction = await Production.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!updatedProduction) return res.status(404).json({ message: "Registro no encontrado" });
+        res.json(updatedProduction);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
+// Eliminar un registro por ID
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedProduction = await Production.findByIdAndDelete(req.params.id);
+        if (!deletedProduction) return res.status(404).json({ message: "Registro no encontrado" });
+        res.json({ message: "Registro eliminado exitosamente" });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 
 export default router;
