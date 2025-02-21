@@ -58,10 +58,10 @@ const CreateBag = () => {
     <div className='p-4 gap-4 font-[montserrat] flex flex-col h-screen'>
         <div className='flex flex-row gap-4'>
             <BackButton />
-            <h1 className='font-semibold text-2xl'>Create Bag</h1>
+            <h1 className='font-semibold text-2xl'>Create Jumbo</h1>
         </div>
 
-      <div className='overflow-x-auto flex flex-col border-2 bg-[#0f1214] rounded-xl w-full h-screen p-4 mx-auto text-white font-bold items-center'>
+      <div className='overflow-x-auto flex flex-col border-2 bg-slate-700 rounded-xl w-full h-screen p-4 mx-auto text-white font-bold items-center'>
         <div className='flex flex-row gap-18'>
         <div className='flex flex-col'>
         <div className='my-4'>
@@ -74,7 +74,7 @@ const CreateBag = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 '>Time</label>
+          <label className='text-xl mr-4 '>Number</label>
           <input
             type='text'
             value={time}
@@ -101,7 +101,7 @@ const CreateBag = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 '>Provider</label>
+          <label className='text-xl mr-4 '>Thickness</label>
           <input
             type='text'
             value={provider}
@@ -110,7 +110,7 @@ const CreateBag = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 '>flexLot</label>
+          <label className='text-xl mr-4 '>Width</label>
           <input
             type='text'
             value={flexLot}
@@ -121,7 +121,7 @@ const CreateBag = () => {
         </div>
         <div className='flex flex-col'>
         <div className='my-4'>
-          <label className='text-xl mr-4 '>Provider Lot</label>
+          <label className='text-xl mr-4 '>Length</label>
           <input
             type='text'
             value={providerLot}
@@ -129,17 +129,9 @@ const CreateBag = () => {
             className='border-2 border-gray-500 px-4 py-2 w-full rounded-lg'
           />
         </div>
+
         <div className='my-4'>
-          <label className='text-xl mr-4 '>Bag Number</label>
-          <input
-            type='text'
-            value={bagNumber}
-            onChange={(e) => setBagNumber(e.target.value)}
-            className='border-2 border-gray-500 px-4 py-2 w-full rounded-lg'
-          />
-        </div>
-        <div className='my-4'>
-          <label className='text-xl mr-4 '>Weight</label>
+          <label className='text-xl mr-4 '>Corona</label>
           <input
             type='number'
             value={weight}
@@ -148,7 +140,7 @@ const CreateBag = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 '>Hopper</label>
+          <label className='text-xl mr-4 '>Time In</label>
           <input
             type='text'
             value={hopper}
@@ -157,7 +149,7 @@ const CreateBag = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 '>Silo</label>
+          <label className='text-xl mr-4 '>Time Out</label>
           <input
             type='text'
             value={silo}
@@ -166,7 +158,7 @@ const CreateBag = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 '>Operator</label>
+          <label className='text-xl mr-4 '>Status</label>
           <input
             type='text'
             value={operator}
@@ -176,7 +168,7 @@ const CreateBag = () => {
         </div>
         </div>
         </div>
-        <button onClick={handleSaveBag} className='p-2 bg-sky-300 m-8 w-1/3 rounded-lg'>
+        <button onClick={handleSaveBag} className='p-2 bg-blue-500 m-8 w-1/3 rounded-lg hover:bg-blue-400'>
           Save
         </button>
       </div>

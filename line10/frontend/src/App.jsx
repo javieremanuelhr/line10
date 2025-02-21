@@ -10,6 +10,7 @@ const Supervisor = lazy(() => import('./views/supervisor/supervisor'));
 const Feeding = lazy(() => import('./views/feeding/feeding'));
 const Operator = lazy(() => import('./views/operator/operator'));
 const Winder = lazy(() => import('./views/winder/winder'));
+const CreateJumbo = lazy(() => import('./views/winder/createJumbo'));
 const DeleteBag = lazy(() => import('./views/feeding/deleteBag'));
 const CreateBag = lazy(() => import('./views/feeding/createBag'));
 const EditBag = lazy(() => import('./views/feeding/editBag'));
@@ -37,6 +38,7 @@ function App() {
             <Route path="/operator" element={<Operator />} />
             <Route path="/feeding" element={<Feeding />} />
             <Route path="/winder" element={<Winder />} />
+            <Route path='/winder/create' element={<CreateJumbo />} />
             <Route path="/inventory" element={<h1>Inventory</h1>} />
             <Route path="/quality" element={<h1>Quality</h1>} />
             <Route path="/feeding/delete/:id" element={<DeleteBag />} />

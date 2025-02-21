@@ -27,14 +27,14 @@ const Feeding = () => {
 
   return (
     <div className="bg-[#ffffff] h-screen screen flex flex-col font-[montserrat]">
-        <div className="text-[#0f1214] text-2xl font-bold p-4 flex flex-row items-center">
+        <div className="text-[#0f1214] text-2xl font-bold p-4 flex flex-row items-center justify-between">
             <h1 className='font-semibold'>Feeding</h1>
             <Link to='/feeding/create'>
-              <MdOutlineAddBox className='text-yellow-500 mx-1' />
+              <div className='bg-amber-400 rounded-lg font-semibold text-lg p-1 hover:bg-amber-300'>Add</div>
             </Link>
         </div>
         <div className='px-2'>
-        <table className='w-full border-collapse border-spacing-2 bg-[#0f1214] text-white rounded-lg'>
+        <table className='w-full border-collapse border-spacing-2 bg-[#0f1214] text-white'>
       <thead>
         <tr>
           <th className='border  rounded-md'>Date</th>
@@ -52,32 +52,41 @@ const Feeding = () => {
         </tr>
       </thead>
       <tbody>
-        {bags.map((bag, index) => (
-          <tr key={bag.id} className='h-8'>
-            <td className='border  rounded-md text-center'>{bag.date}</td>
-            <td className='border  rounded-md text-center'>{bag.time}</td>
-            <td className='border  rounded-md text-center max-md:hidden'>{bag.shift}</td>
-            <td className='border  rounded-md text-center max-md:hidden'>{bag.material}</td>
-            <td className='border  rounded-md text-center'>{bag.provider}</td>
-            <td className='border  rounded-md text-center'>{bag.flexLot}</td>
-            <td className='border  rounded-md text-center'>{bag.providerLot}</td>
-            <td className='border  rounded-md text-center'>{bag.weight}</td>
-            <td className='border  rounded-md text-center'>{bag.hopper}</td>
-            <td className='border  rounded-md text-center'>{bag.silo}</td>
-            <td className='border  rounded-md text-center'>{bag.operator}</td>
-            <td className='border  rounded-md text-center'>
-            <div className='flex justify-center gap-0'>
-              <Link to={`/feeding/edit/${bag._id}`}>
-                <AiOutlineEdit className='text-green-500 mx-1' />
-              </Link>
-              <Link to={`/feeding/delete/${bag._id}`}>
-              <MdOutlineDelete className='text-red-500 mx-1 cursor-pointer'/>
-              </Link>
-            </div>
-            </td>
-          </tr>
-        ))}
-      </tbody>
+  {[...bags].reverse().map((bag, index) => {
+    const rowColor =
+      bag.shift === 'A' ? 'bg-blue-600' :
+      bag.shift === 'B' ? 'bg-amber-600' :
+      bag.shift === 'C' ? 'bg-purple-600' :
+      'bg-gray-300'; // Default color
+
+    return (
+      <tr key={bag.id} className={`h-8 font-bold ${rowColor} text-white`}>
+        <td className='border rounded-md text-center'>{bag.date}</td>
+        <td className='border rounded-md text-center'>{bag.time}</td>
+        <td className='border rounded-md text-center max-md:hidden'>{bag.shift}</td>
+        <td className='border rounded-md text-center max-md:hidden'>{bag.material}</td>
+        <td className='border rounded-md text-center'>{bag.provider}</td>
+        <td className='border rounded-md text-center'>{bag.flexLot}</td>
+        <td className='border rounded-md text-center'>{bag.providerLot}</td>
+        <td className='border rounded-md text-center'>{bag.weight}</td>
+        <td className='border rounded-md text-center'>{bag.hopper}</td>
+        <td className='border rounded-md text-center'>{bag.silo}</td>
+        <td className='border rounded-md text-center'>{bag.operator}</td>
+        <td className='border rounded-md text-center'>
+          <div className='flex justify-center gap-0'>
+            <Link to={`/feeding/edit/${bag._id}`}>
+              <AiOutlineEdit className='text-black mx-1' />
+            </Link>
+            <Link to={`/feeding/delete/${bag._id}`}>
+              <MdOutlineDelete className='text-black mx-1 cursor-pointer' />
+            </Link>
+          </div>
+        </td>
+      </tr>
+    );
+  })}
+</tbody>
+
     </table>
         </div>
     </div>
